@@ -1,2 +1,2 @@
 # backend-noticias-java
-Projeto de backend para manipular noticias utlizando spring boot e jdbc com banco de dados mysql
+Projeto de backend para manipular noticias utlizando spring boot e hibernate com banco de dados mysql
