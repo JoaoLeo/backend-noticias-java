@@ -30,7 +30,7 @@ public class CategoriaService {
             new ObjetoNaoEncontrado("Objeto não encotrado na base de dados")
         );
     }
-    public Categoria update(Categoria novaCategoria, Long id){
+    public Categoria update(Long id, Categoria novaCategoria){
         try {
             Categoria obj = repo.getReferenceById(id);
             obj.setNome(novaCategoria.getNome());

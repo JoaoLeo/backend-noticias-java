@@ -9,11 +9,10 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
 import java.util.List;
-import java.util.Objects;
 
 @RestController
 @RequestMapping(value = "/categorias")
-public class CategoriaResorce {
+public class CategoriaResource {
 
     @Autowired
     private CategoriaService service;
@@ -38,5 +37,15 @@ public class CategoriaResorce {
                 .toUri();
         return ResponseEntity.created(uri).body(obj);
     }
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<Void> delete(@PathVariable Long id){
+        service.delete(id);
+        return ResponseEntity.noContent().build();
+    }
 
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<Categoria> update(@PathVariable Long id,  @RequestBody Categoria obj){
+        obj = service.update(id,obj);
+        return ResponseEntity.ok().body(obj);
+    }
 }
