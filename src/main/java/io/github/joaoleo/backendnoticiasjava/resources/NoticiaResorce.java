@@ -20,4 +20,23 @@ public class NoticiaResorce {
         List<Noticia> noticias = service.findAll();
         return ResponseEntity.ok().body(noticias);
     }
+    /*
+
+
+
+
+
+
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<Void> delete(@PathVariable Long id){
+        service.delete(id);
+        return ResponseEntity.noContent().build();
+    }
+
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<Usuario> update(@PathVariable Long id,  @RequestBody Usuario obj){
+        obj = service.update(id,obj);
+        return ResponseEntity.ok().body(obj);
+    }
+     */
 }
